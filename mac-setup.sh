@@ -45,13 +45,13 @@ brew install rbenv ruby-build
 echo 'if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi' >> ~/.zshrc
 source ~/.zshrc
 
-echo "Installing ruby v2.3.1"
-rbenv install 2.3.1
-rbenv global 2.3.1
+echo "Installing ruby v2.7.0"
+rbenv install 2.7.0
+rbenv global 2.7.0
 rbenv rehash
 
-echo "Installing rails v4.2.8"
-gem install rails -v 4.2.8
+echo "Installing rails v4.2.11.1"
+gem install rails -v 4.2.11.
 rbenv rehash
 
 echo "Installing global npm packages"
