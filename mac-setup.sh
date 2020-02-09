@@ -1,31 +1,38 @@
 echo "Installing nvm"
-# curl https://raw.github.com/creationix/nvm/master/install.sh | sh
-brew install nvm
-mkdir ~/.nvm
-echo "export NVM_DIR="$HOME/.nvm"" >> ~/.zshrc
-# This loads nvm
-echo "[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"" >> ~/.zshrc
-# This loads nvm bash_completion
-echo "[ -s "usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"" >> ~/.zshrc
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
+
+# brew install nvm
+# mkdir ~/.nvm
+# echo "export NVM_DIR="$HOME/.nvm"" >> ~/.zshrc
+# # This loads nvm
+# echo "[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"" >> ~/.zshrc
+# # This loads nvm bash_completion
+# echo "[ -s "usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"" >> ~/.zshrc
+
 source ~/.zshrc
 
+# Load nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
 echo "Installing node"
-nvm install v8.9.4
-nvm use v8.9.4
+nvm install --lts
+# nvm use --lts
 
 # activate configuration
-echo "source ~/.nvm/nvm.sh" >> ~/.zshrc
+# echo "source ~/.nvm/nvm.sh" >> ~/.zshrc
 
 # PACKAGES
 PACKAGES=(
-  evernote
+  # evernote
   # filezilla
   # firefox
   google-chrome
   iterm2
   # libreoffice
-  slack
-  visual-studio-code
+  # slack
+  # visual-studio-code
   # vlc
 )
 
